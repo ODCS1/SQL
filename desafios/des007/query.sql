@@ -3,3 +3,5 @@
 SELECT COUNT(*)
 FROM production.product
 WHERE size <> 'null'
+
+-- 211
