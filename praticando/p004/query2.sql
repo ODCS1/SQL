@@ -1,0 +1,2 @@
+SELECT firstname,lastname
+FRom                                                                                                                                             for teste a receive a beta                            
