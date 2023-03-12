@@ -1,7 +1,7 @@
 -- Quantas pessoas temos com o sobrenome que inicia com a letra P ?
 
-SELECT COUNT(Firstname)
+SELECT COUNT(lastname)
 FROM person.person
-WHERE FirstName LIKE 'P%'
+WHERE lastname LIKE 'P%'
 
--- 347
+-- 1187
