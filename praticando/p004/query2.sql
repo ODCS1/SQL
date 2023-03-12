@@ -1,2 +1,2 @@
 SELECT firstname,lastname
-FRom                                                                                                                                             for teste a receive a beta                            
+FROM person.person
