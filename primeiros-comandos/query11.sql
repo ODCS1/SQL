@@ -16,7 +16,7 @@ FROM sales.salesorderdetail
 GROUP BY specialofferid
 
 -- Exemplo:
-SELECT productid, count(productid) AS 'Contagem,'
+SELECT productid, count(productid) AS 'Contagem'
 FROM sales.salesorderdetail
 GROUP BY productid
 
