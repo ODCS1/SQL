@@ -32,4 +32,3 @@ CREATE TABLE PREREQUISITE (
   prerequisite_number VARCHAR(8) PRIMARY KEY,
   course_number VARCHAR(6) NOT NULL
 );
-
