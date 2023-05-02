@@ -24,5 +24,49 @@ CREATE TABLE FLIGHT_LEG (
 );
 
 CREATE TABLE LEG_INSTANCE (
-  flight_number VARCHAR 
-)
+  flight_number VARCHAR() PRIMARY KEY,
+  leg_number VARCHAR() PRIMARY KEY,
+  date DATETIME() PRIMARY KEY,
+  number_of_avilable_seats INT() PRIMARY KEY,
+  airplane_id VARCHAR() FOREIGN KEY,
+  departure_airport_code VARCHAR() NOT NULL,
+  departure_time time NOT NULL,
+  arrival_airport_code VARCHAR() NOT NULL,
+  arrival_time time NOT NULL
+);
+
+CREATE TABLE FARE (
+  flight_number  VARCHAR() PRIMARY KEY,
+  FARE_CODE VARCHAR() PRIMARY KEY,
+  amount VARCHAR() NOT NULL,
+  restrictions VARCHAR()
+);
+
+CREATE TABLE AIRPLANE_TYPE (
+  airplane_type_name VARCHAR() PRIMARY KEY,
+  max_seats INT() NOT NULL,
+  company VARCHAR() NOT NULL UNIQUE 
+);
+
+CREATE TABLE CAN_LAND (
+  airplane_type_name VARCHAR() PRIMARY KEY,
+  airport_code VARCHAR(20) PRIMARY KEY
+);
+
+CREATE TABLE AIRPLANE (
+  airplane_id VARCHAR() PRIMARY KEY,
+  total_number_of_seats VARCHAR() NOT NULL,
+  airplane_type VARCHAR() NOT NULL
+);
+
+CREATE TABLE SEAT_RESERVATION (
+  flight_number VARCHAR() PRIMARY KEY,
+  leg_number VARCHAR() PRIMARY KEY,
+  date datetime() PRIMARY KEY,
+  seat_number VARCHAR() PRIMARY KEY,
+  customer_name VARCHAR() NOT NULL,
+  customer_phone CHAR(11)
+);
+
+
+
