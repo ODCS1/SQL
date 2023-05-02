@@ -1,0 +1,45 @@
+-- LIVRARIA
+
+CREATE TABLE BOOK (
+  book_id VARCHAR() PRIMARY KEY,
+  title VARCHAR() NOT NULL UNIQUE,
+  publisher_name VARCHAR() NOT NULL UNIQUE
+)
+
+CREATE TABLE BOOK_AUTHORS (
+  book_id VARCHAR() PRIMARY KEY,
+  author_name VARCHAR() PRIMARY KEY
+);
+
+CREATE TABLE PUBLISHER (
+  name VARCHAR() PRIMARY KEY,
+  address VARCHAR() NOT NULL UNIQUE,
+  phone CHAR(12)  
+);
+
+CREATE TABLE BOOK_COPIES (
+  book_id VARCHAR() PRIMARY KEY,
+  branch_id VARCHAR() PRIMARY KEY,
+  no_of_copies VARCHAR() NOT NULL
+);
+
+CREATE TABLE BOOK_LOANS (
+  book_id VARCHAR() PRIMARY KEY,
+  branch_id VARCHAR() PRIMARY KEY,
+  card_no VARCHAR() PRIMARY KEY,
+  date_out datetime NOT NULL,
+  due_date datetime NOT NULL
+);
+
+CREATE TABLE LIBRARY_BRANCH (
+  branch_id VARCHAR() PRIMARY KEY,
+  branch_name VARCHAR() NOT NULL,
+  address VARCHAR() NOT NULL UNIQUE
+);
+
+CREATE TABLE LIBRARY_BRANCH (
+  card_no VARCHAR() PRIMARY KEY,
+  name VARCHAR() NOT NULL,
+  address VARCHAR() NOT NULL UNIQUE,
+  phone VARCHAR() UNIQUE
+);
