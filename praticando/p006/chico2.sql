@@ -16,7 +16,7 @@ CREATE TABLE FLIGHT (
 
 CREATE TABLE FLIGHT_LEG (
   flight__number VARCHAR() PRIMARY KEY,
-  leg_nummber VARCHAR() PRIMARY KEY,
+  leg_number VARCHAR() PRIMARY KEY,
   departure_airport_code VARCHAR() NOT NULL UNIQUE,
   scheduled_departure_time VARCHAR() NOT NULL,
   arrival_airport_code VARCHAR() NOT NULL,

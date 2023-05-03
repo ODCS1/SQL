@@ -2,7 +2,7 @@
 
 CREATE TABLE PUBLISHER (
   name VARCHAR(15) PRIMARY KEY,
-  address VARCHAR(40),
+  address VARCHAR(40) NOT NULL,
   phone CHAR(11) UNIQUE 
 );
 
