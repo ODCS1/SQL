@@ -9,7 +9,7 @@ CREATE TABLE COURSE (
 
 CREATE TABLE SECTION (
   section_identifier VARCHAR(3) PRIMARY KEY,
-  course_number VARCHAR(8) FOREIGN KEY,
+  course_number FOREIGN KEY REFERENCES COURSE(course_number),
   semester VARCHAR(6) NOT NULL,
   year CHAR(2) NOT NULL,
   instructor VARCHAR(8) NOT NULL
