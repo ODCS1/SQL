@@ -28,7 +28,7 @@ CREATE TABLE LEG_INSTANCE (
   leg_number VARCHAR() PRIMARY KEY,
   date DATETIME() PRIMARY KEY,
   number_of_avilable_seats INT() PRIMARY KEY,
-  airplane_id VARCHAR() FOREIGN KEY,
+  airplane_id FOREIGN KEY REFERENCES AIRPLANE(airplane_id),
   departure_airport_code VARCHAR() NOT NULL,
   departure_time time NOT NULL,
   arrival_airport_code VARCHAR() NOT NULL,
