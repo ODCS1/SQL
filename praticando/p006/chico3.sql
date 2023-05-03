@@ -3,7 +3,7 @@
 CREATE TABLE PUBLISHER (
   name VARCHAR(15) PRIMARY KEY,
   address VARCHAR(40),
-  phone CHAR(11)  
+  phone CHAR(11) UNIQUE 
 );
 
 CREATE TABLE BOOK (
@@ -24,32 +24,24 @@ CREATE TABLE LIBRARY_BRANCH (
   address VARCHAR(40)
 );
 
+CREATE TABLE BORROWER (
+  card_no VARCHAR(12) PRIMARY KEY,
+  name VARCHAR(15) NOT NULL,
+  address VARCHAR(40),
+  phone CHAR(11) UNIQUE
+);
+
+
 CREATE TABLE BOOK_COPIES (
-  book_id VARCHAR() PRIMARY KEY,
-  branch_id VARCHAR() PRIMARY KEY,
-  no_of_copies VARCHAR() NOT NULL
+  book_id VARCHAR(5) PRIMARY KEY,
+  branch_id VARCHAR(10) PRIMARY KEY,
+  no_of_copies VARCHAR(3) NOT NULL
 );
 
 CREATE TABLE BOOK_LOANS (
-  book_id VARCHAR() PRIMARY KEY,
-  branch_id VARCHAR() PRIMARY KEY,
-  card_no VARCHAR() PRIMARY KEY,
+  book_id VARCHAR(5) PRIMARY KEY,
+  branch_id VARCHAR(10) PRIMARY KEY,
+  card_no VARCHAR(12) PRIMARY KEY,
   date_out datetime NOT NULL,
   due_date datetime NOT NULL
-);
-
-
-
-CREATE TABLE LIBRARY_BRANCH (
-  card_no VARCHAR() PRIMARY KEY,
-  name VARCHAR() NOT NULL,
-  address VARCHAR() NOT NULL UNIQUE,
-  phone VARCHAR() UNIQUE
-);
-
-CREATE TABLE BORROWER (
-  card_no VARCHAR() PRIMARY KEY,
-  name VARCHAR() NOT NULL,
-  address VARCHAR() NOT NULL UNIQUE,
-  phone VARCHAR() UNIQUE
 );
